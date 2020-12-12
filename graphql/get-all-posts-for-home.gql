@@ -1,0 +1,37 @@
+query GetAllPosts {
+  posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+    edges {
+      node {
+        title
+        title_spanish
+        excerpt
+        slug
+        date
+        featuredImage {
+          node {
+            sourceUrl
+            srcSet
+            mediaDetails {
+              sizes {
+                height
+                name
+                width
+                sourceUrl
+              }
+            }
+          }
+        }
+        author {
+          node {
+            name
+            firstName
+            lastName
+            avatar {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}

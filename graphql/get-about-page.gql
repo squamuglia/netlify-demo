@@ -1,0 +1,21 @@
+query GetAboutPage {
+	members {
+		nodes {
+			memberDetails {
+				name
+				position
+				project
+				team
+				email
+				image {
+					id
+					sourceUrl
+					title
+				}
+			}
+		}
+	}
+	page(idType: URI, id: "about-us") {
+		content
+	}
+}
