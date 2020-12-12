@@ -1,0 +1,31 @@
+query GetProjects {
+  projects {
+    nodes {
+      projectDetails {
+        projectName
+        projectNameSpanish
+        description
+        descriptionSpanish
+        fieldGroupName
+        image {
+          sourceUrl
+          srcSet
+          mediaDetails {
+            sizes {
+              height
+              name
+              width
+              sourceUrl
+            }
+          }
+        }
+        location {
+          longitude
+          latitude
+          city
+          country
+        }
+      }
+    }
+  }
+}

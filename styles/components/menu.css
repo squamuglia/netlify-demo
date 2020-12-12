@@ -1,0 +1,73 @@
+.ham {
+	@screen sm {
+		width: 2rem;
+		height: 0.8rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		&-1 {
+			transition: transform 0.2s;
+			width: 100%;
+			@apply border-b;
+			@apply border-gray-600;
+		}
+
+		&-2 {
+			transition: transform 0.2s;
+			width: 100%;
+			@apply border-b;
+			@apply border-gray-600;
+		}
+	}
+}
+.menu {
+	@screen sm {
+		display: none;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	&-mobile-show {
+		@screen sm {
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+			padding: calc(100vw - 200px) 0;
+
+			& > span {
+				width: 100%;
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.mobile-hide {
+	@screen sm {
+		display: none !important;
+	}
+}
+
+.ham45 {
+	transform: rotate(45deg) translate(0.5em);
+}
+.ham-45 {
+	transform: rotate(-45deg) translate(0.5em);
+}
+
+.disabled > a {
+	cursor: not-allowed;
+	pointer-events: none;
+	text-decoration: none;
+}
+
+.menu > span > a,
+.menu > span > span > a {
+	text-decoration: none;
+}

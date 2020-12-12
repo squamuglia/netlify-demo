@@ -1,0 +1,7 @@
+query GetAllPagesWithSlug {
+	pages(first: 10000) {
+		nodes {
+			slug
+		}
+	}
+}

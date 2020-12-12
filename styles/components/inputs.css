@@ -1,0 +1,22 @@
+.form {
+	width: 100%;
+	padding: 0.25em 0.75em 0.75em;
+	border-radius: 6px;
+}
+label {
+	@apply text-gray-600;
+	display: grid;
+	margin-bottom: 1em;
+}
+textarea,
+input,
+.input {
+	@apply bg-white;
+	@apply border;
+	@apply border-gray-600;
+	border-radius: 4px;
+	padding: 0.5em 0.75em;
+	font-size: 1em;
+	line-height: 1.5;
+	font-family: sans-serif;
+}

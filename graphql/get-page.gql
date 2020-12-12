@@ -1,0 +1,6 @@
+query GetPage($id: ID!) {
+	page(id: $id, idType: URI) {
+		content
+		title
+	}
+}

@@ -1,0 +1,9 @@
+overwrite: true
+schema: 'https://donate.fneinternacional.org/graphql'
+documents:
+  - './graphql/**/*.{gql, graphql}'
+generates:
+  generated/graphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'

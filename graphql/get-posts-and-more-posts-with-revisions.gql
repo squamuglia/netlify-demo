@@ -1,0 +1,111 @@
+query GetPostBySlugWithRevisions($id: ID!, $idType: PostIdType!) {
+  post(id: $id, idType: $idType) {
+    title
+    title_spanish
+    excerpt
+    slug
+    date
+    featuredImage {
+      node {
+        sourceUrl
+      }
+    }
+    author {
+      node {
+        name
+        firstName
+        lastName
+        avatar {
+          url
+        }
+      }
+    }
+    categories {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+    tags {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+    content
+    content_spanish
+    # Only some of the fields of a revision are considered as there are some inconsistencies
+    revisions(first: 1, where: { orderby: { field: MODIFIED, order: ASC } }) {
+      edges {
+        node {
+          title
+          title_spanish
+          excerpt
+          content
+          content_spanish
+          author {
+            node {
+              name
+              firstName
+              lastName
+              avatar {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
+    edges {
+      node {
+        title
+        title_spanish
+        excerpt
+        slug
+        date
+        featuredImage {
+          node {
+            sourceUrl
+            srcSet
+            mediaDetails {
+              sizes {
+                height
+                name
+                width
+                sourceUrl
+              }
+            }
+          }
+        }
+        author {
+          node {
+            name
+            firstName
+            lastName
+            avatar {
+              url
+            }
+          }
+        }
+        categories {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+        tags {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

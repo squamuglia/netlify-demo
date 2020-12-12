@@ -1,0 +1,20 @@
+/* Tailwind */
+@import 'tailwindcss/base';
+
+/* Components */
+@import 'wordpress.css';
+@import 'components/menu.css';
+@import 'components/typography.css';
+@import 'components/transitions.css';
+@import 'components/buttons.css';
+@import 'components/inputs.css';
+
+/* Start purging... */
+@import 'tailwindcss/components';
+/* Stop purging. */
+
+/* Start purging... */
+@import 'tailwindcss/utilities';
+/* Stop purging. */
+
+/* Your own custom utilities */
